@@ -1,15 +1,13 @@
 # Objectif du job :
 # - Reprendre la classe Livre du job précédent
-# - Ajouter un attribut privé disponible (True par défaut)
+# - Ajouter un attribut privé disponible initialisé à True
 # - Créer une méthode verification() qui retourne la disponibilité
-# - Créer une méthode emprunter() qui rend le livre indisponible
-# - Créer une méthode rendre() qui rend le livre disponible
+# - Créer des méthodes emprunter() et rendre() pour gérer le prêt
 #
 # Solution :
-# - Ajout de l'attribut privé disponible initialisé à True
-# - Méthode verification() qui retourne l'état de disponibilité
-# - Méthode emprunter() qui vérifie la disponibilité et met à jour l'état
-# - Méthode rendre() qui vérifie si le livre est emprunté et met à jour l'état
+# - Ajout de l'attribut disponible initialisé à True
+# - Implémentation de la méthode verification()
+# - Implémentation des méthodes emprunter() et rendre()
 
 class Livre:
     def __init__(self, titre, auteur, nombre_pages):

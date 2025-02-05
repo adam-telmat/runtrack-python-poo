@@ -1,12 +1,12 @@
 # Objectif du job :
-# - Créer une classe Livre avec des attributs privés (titre, auteur, nombre de pages)
-# - Implémenter des accesseurs (getters) et mutateurs (setters) pour ces attributs
-# - Ajouter une validation pour le nombre de pages (entier positif uniquement)
+# - Créer une classe Livre avec des attributs privés (titre, auteur, nombre_pages)
+# - Implémenter des accesseurs et mutateurs pour ces attributs
+# - Ajouter une vérification pour nombre_pages (entier positif uniquement)
 #
 # Solution :
 # - Création d'une classe Livre avec titre, auteur et nombre_pages en privé
 # - Implémentation des getters et setters pour chaque attribut
-# - Ajout d'une validation dans set_nombre_pages pour vérifier que la valeur est un entier positif
+# - Ajout d'une vérification dans set_nombre_pages pour valider la valeur
 
 class Livre:
     def __init__(self, titre, auteur, nombre_pages):

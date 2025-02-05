@@ -1,17 +1,14 @@
 # Objectif du job :
-# - Créer une classe Student avec des attributs privés (nom, prénom, num_etudiant, credits)
+# - Créer une classe Student avec des attributs privés (nom, prenom, num_etudiant, credits)
 # - Implémenter une méthode add_credits pour ajouter des crédits (si > 0)
-# - Créer une méthode privée student_eval qui évalue le niveau selon les crédits
-# - Implémenter une méthode student_info qui affiche toutes les informations
-# - Afficher d'abord le total de 30 crédits puis atteindre le niveau "Bien"
+# - Créer une méthode privée __student_eval qui évalue le niveau selon les crédits
+# - Implémenter une méthode student_info qui affiche les informations
 #
 # Solution :
 # - Création des attributs privés avec credits initialisé à 0
-# - Méthode add_credits avec validation
-# - Méthode privée __student_eval qui retourne le niveau selon les crédits exacts de l'énoncé
-# - Méthode student_info qui affiche les informations de l'étudiant
-# - Ajout de 3x10 crédits et affichage du total
-# - Ajout de 40 crédits supplémentaires pour atteindre le niveau "Bien" (70 crédits)
+# - Implémentation de la méthode add_credits avec vérification
+# - Méthode privée __student_eval pour l'évaluation
+# - Méthode student_info pour l'affichage des informations
 
 class Student:
     def __init__(self, nom, prenom, num_etudiant):

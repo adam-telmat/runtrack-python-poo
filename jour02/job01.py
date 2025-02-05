@@ -1,14 +1,14 @@
 # Objectif du job :
-# - Créer une classe Rectangle avec des attributs privés (longueur et largeur)
-# - Implémenter des accesseurs (getters) et mutateurs (setters) pour ces attributs
-# - Tester la classe avec un rectangle de dimensions 10x5
+# - Créer une classe Rectangle avec des attributs privés (longueur, largeur)
+# - Implémenter des accesseurs et mutateurs pour ces attributs
+# - Tester la classe avec un rectangle de dimensions spécifiques
 # - Modifier les valeurs et vérifier les changements
 #
 # Solution :
 # - Création d'une classe Rectangle avec longueur et largeur en privé
 # - Implémentation des méthodes get_longueur() et get_largeur() pour accéder aux valeurs
 # - Implémentation des méthodes set_longueur() et set_largeur() pour modifier les valeurs
-# - Test avec un rectangle 10x5 puis modification des valeurs pour vérifier
+# - Test avec un rectangle puis modification des valeurs pour vérification
 
 class Rectangle:
     def __init__(self, longueur, largeur):
