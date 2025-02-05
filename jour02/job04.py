@@ -46,7 +46,6 @@ class Student:
         print(f"id = {self.__num_etudiant}")
         print(f"Niveau = {self.__level}")
 
-
 john = Student("John", "Doe", 145)
 
 john.add_credits(10)
@@ -56,6 +55,6 @@ john.add_credits(10)
 print(f"Le nombre de credits de John Doe est de {john._Student__credits} points")
 
 # Ajout de crédits supplémentaires pour atteindre le niveau "Bien" (≥ 70 crédits)
-john.add_credits(40)  # 30 + 40 = 70 crédits, niveau "Bien"
+john.add_credits(40) 
 
 john.student_info()
