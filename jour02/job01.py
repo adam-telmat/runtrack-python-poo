@@ -15,12 +15,14 @@ class Rectangle:
         self.__longueur = longueur
         self.__largeur = largeur
 
+    # Getters
     def get_longueur(self):
         return self.__longueur
 
     def get_largeur(self):
         return self.__largeur
 
+    # Setters
     def set_longueur(self, nouvelle_longueur):
         self.__longueur = nouvelle_longueur
 

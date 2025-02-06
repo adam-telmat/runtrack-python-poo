@@ -18,13 +18,7 @@ class Student:
         self.__credits = 0
         self.__level = self.__student_eval()
 
-    def add_credits(self, credits):
-        if credits > 0:
-            self.__credits += credits
-            self.__level = self.__student_eval()
-        else:
-            print("Erreur : le nombre de crédits doit être supérieur à 0")
-
+    # Méthode privée
     def __student_eval(self):
         if self.__credits >= 90:
             return "Excellent"
@@ -36,6 +30,13 @@ class Student:
             return "Passable"
         else:
             return "Insuffisant"
+
+    def add_credits(self, credits):
+        if credits > 0:
+            self.__credits += credits
+            self.__level = self.__student_eval()
+        else:
+            print("Erreur : le nombre de crédits doit être supérieur à 0")
 
     def student_info(self):
         print(f"Nom = {self.__nom}")
@@ -49,7 +50,7 @@ john.add_credits(10)
 john.add_credits(10)
 john.add_credits(10)
 
-print(f"Le nombre de credits de John Doe est de {john._Student__credits} points")
+print(f"Le nombre de crédits de John Doe est de {john._Student__credits} points")
 
 # Ajout de crédits supplémentaires pour atteindre le niveau "Bien" (≥ 70 crédits)
 john.add_credits(40) 

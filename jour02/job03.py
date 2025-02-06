@@ -16,6 +16,7 @@ class Livre:
         self.__nombre_pages = nombre_pages
         self.__disponible = True
 
+    # Getters
     def get_titre(self):
         return self.__titre
     
@@ -25,6 +26,7 @@ class Livre:
     def get_nombre_pages(self):
         return self.__nombre_pages
     
+    # Setters
     def set_titre(self, nouveau_titre):
         self.__titre = nouveau_titre
     

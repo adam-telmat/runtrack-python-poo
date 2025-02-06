@@ -47,6 +47,7 @@ class Voiture:
     def set_kilometrage(self, kilometrage):
         self.__kilometrage = kilometrage
 
+    # Méthode privée
     def __verifier_plein(self):
         return self.__reservoir
 
@@ -62,7 +63,6 @@ class Voiture:
         print("La voiture s'arrete")
 
 
-# Tests
 ma_voiture = Voiture("Peugeot", "208", 2020, 50000)
 
 print(f"Etat initial : {'en marche' if ma_voiture.get_en_marche() else 'arretee'}")
