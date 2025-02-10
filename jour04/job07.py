@@ -1,14 +1,19 @@
 # Objectif du job :
-# - Créer un jeu de Blackjack
-# - Implémenter les règles de base (21 points max)
-# - Gérer les valeurs des cartes (2-10, figures, as)
-# - Créer le système de tour par tour
+# - Créer un jeu de Blackjack avec règles simplifiées
+# - Gérer les valeurs des cartes (2-10, figures=10, as=1/11)
+# - Implémenter le tour par tour (joueur puis croupier)
+# - Gérer les conditions de victoire/défaite
+# - Permettre de rejouer une partie
 #
 # Solution :
-# - Classe Carte pour représenter chaque carte
-# - Classe Jeu pour gérer la partie
-# - Méthodes pour distribuer et jouer
-# - Interface simple en console
+# - Classe Carte pour représenter les cartes et leurs valeurs
+# - Classe Jeu pour gérer :
+#   * Distribution des cartes
+#   * Calcul des points (gestion spéciale des as)
+#   * Tour du joueur avec vérification des entrées
+#   * Tour du croupier (s'arrête à 17)
+#   * Détermination du gagnant
+# - Interface interactive avec gestion des erreurs
 
 import random
 
@@ -46,7 +51,7 @@ class Jeu:
         points = 0
         as_count = 0
         for carte in main:
-            if carte.get_valeur() == 11:  # C'est un As
+            if carte.get_valeur() == 11:  
                 as_count += 1
             points += carte.get_valeur()
         
@@ -98,27 +103,42 @@ class Jeu:
             return "Égalité !"
 
 if __name__ == "__main__":
-    jeu = Jeu()
-    jeu.distribuer_cartes_initiales()
-    
-    # Tour du joueur
-    perdu = False
-    while True:
-        jeu.afficher_mains()
-        choix = input("\nVoulez-vous tirer une carte ? (o/n): ")
-        if choix.lower() != 'o':
-            break
-        if not jeu.joueur_tire_carte():
-            print("Vous avez dépassé 21 !")
-            perdu = True
-            break
+    while True:  
+        jeu = Jeu()
+        jeu.distribuer_cartes_initiales()
+        
+        # Tour du joueur
+        perdu = False
+        while True:
+            jeu.afficher_mains()
+            while True:
+                choix = input("\nVoulez-vous tirer une carte ? (oui/non): ").lower()
+                if choix in ['oui', 'non']:
+                    break
+                print("Veuillez entrer 'oui' ou 'non'")
+            
+            if choix == 'non':
+                break
+            if not jeu.joueur_tire_carte():
+                print("Vous avez dépassé 21 !")
+                perdu = True
+                break
 
-    # Tour du croupier seulement si le joueur n'a pas perdu
-    if not perdu:
-        print("\nTour du croupier:")
-        jeu.croupier_joue()
-    
-    # Résultat final
-    print("\n=== Résultat final ===")
-    jeu.afficher_mains(True)
-    print("\n" + jeu.determiner_gagnant())
+        if not perdu:
+            print("\nTour du croupier:")
+            jeu.croupier_joue()
+        
+        print("\n=== Résultat final ===")
+        jeu.afficher_mains(True)
+        print("\n" + jeu.determiner_gagnant())
+
+        while True:
+            rejouer = input("\nVoulez-vous faire une autre partie ? (oui/non): ").lower()
+            if rejouer in ['oui', 'non']:
+                break
+            print("Veuillez entrer 'oui' ou 'non'")
+        
+        if rejouer == 'non':
+            print("\nMerci d'avoir joué !")
+            break
+        print("\n" + "="*40 + "\n")  
